@@ -1,0 +1,19 @@
+{
+  "name": "vizja-agent-due-diligence",
+  "version": "1.0.0",
+  "description": "VIZJA University — bilingual (EN/PL) agent due diligence web app with admin review panel",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "init-db": "node -e \"require('./db').init()\""
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=22.5"
+  }
+}

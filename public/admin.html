@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VIZJA University — Due Diligence Admin</title>
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">V</div>
+    <div>
+      <h1>VIZJA University</h1>
+      <div class="sub">Agent Due Diligence — Review Panel</div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button data-lang="en" class="active">EN</button>
+    <button data-lang="pl">PL</button>
+  </div>
+  <button class="btn ghost no-print hidden" id="logoutBtn" style="margin-left:12px" data-en="Log out" data-pl="Wyloguj">Log out</button>
+</header>
+
+<!-- LOGIN -->
+<div id="login" class="wrap">
+  <div class="card login-wrap">
+    <h2 data-en="Reviewer sign in" data-pl="Logowanie recenzenta">Reviewer sign in</h2>
+    <p class="muted" data-en="Internal use only." data-pl="Wyłącznie do użytku wewnętrznego.">Internal use only.</p>
+    <div class="field"><input type="password" id="pw" placeholder="Password"></div>
+    <button class="btn" id="loginBtn" data-en="Sign in" data-pl="Zaloguj">Sign in</button>
+    <p class="err-text hidden" id="loginErr"></p>
+  </div>
+</div>
+
+<!-- APP -->
+<main id="app" class="wrap wide hidden">
+  <div class="tabs no-print">
+    <div class="tab active" data-view="submissions" data-en="Submissions" data-pl="Zgłoszenia">Submissions</div>
+    <div class="tab" data-view="invites" data-en="Invitation links" data-pl="Linki zaproszeń">Invitation links</div>
+  </div>
+
+  <!-- SUBMISSIONS LIST -->
+  <section id="view-submissions">
+    <div class="statgrid" id="stats"></div>
+    <div class="card" style="padding:0;overflow:hidden">
+      <table class="list" id="subTable"><thead></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <!-- INVITES -->
+  <section id="view-invites" class="hidden">
+    <div class="card">
+      <h2 data-en="Create an invitation link" data-pl="Utwórz link zaproszenia">Create an invitation link</h2>
+      <div class="btn-row">
+        <input type="text" id="invAgency" style="max-width:280px" data-ph-en="Agency name (optional)" data-ph-pl="Nazwa agencji (opcjonalnie)">
+        <input type="text" id="invNote" style="max-width:280px" data-ph-en="Internal note (optional)" data-ph-pl="Notatka wewnętrzna (opcjonalnie)">
+        <button class="btn gold" id="invCreate" data-en="Generate link" data-pl="Generuj link">Generate link</button>
+      </div>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden">
+      <table class="list" id="invTable"><thead></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <!-- DETAIL -->
+  <section id="view-detail" class="hidden">
+    <p class="no-print"><span class="back-link" id="backBtn">‹ <span data-en="Back to submissions" data-pl="Powrót do zgłoszeń">Back to submissions</span></span></p>
+    <div class="split">
+      <div id="detailAnswers"></div>
+      <div id="detailAssessment"></div>
+    </div>
+  </section>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="/js/schema.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>
