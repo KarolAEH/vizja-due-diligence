@@ -5,8 +5,8 @@
   "type": "commonjs",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "init-db": "node -e \"require('./db').init()\""
+    "start": "node --experimental-sqlite server.js",
+    "init-db": "node --experimental-sqlite -e \"require('./db').init()\""
   },
   "license": "UNLICENSED",
   "private": true,

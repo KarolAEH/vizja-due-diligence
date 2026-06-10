@@ -13,7 +13,7 @@ services:
     autoDeploy: true         # każdy push do gałęzi głównej = automatyczny deploy
     envVars:
       - key: NODE_VERSION
-        value: 22.12.0
+        value: 22.22.0
       - key: SESSION_SECRET
         generateValue: true  # Render wygeneruje losowy sekret jeden raz i go zapamięta
       - key: ADMIN_PASSWORD
